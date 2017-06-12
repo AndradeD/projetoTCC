@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<script src="~/Scripts/EntradaDados/EntradaDados.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/EntradaDados/jit.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="~/Scripts/EntradaDados/d3.layout.cloud.js"></script>
+<!--<script src="~/Scripts/EntradaDados/IndexWordCloud.js"></script>-->
+
+<body onload="init();">
+    <div id="hipertreeGraph"></div>
+    <div id="wordCloudGraph"></div>
+    @*<canvas id="wordCloudGraph"></canvas>*@
+    <div id="inner-details"></div>
+    <div id="log"></div>
+</body>
+<style>
+    #hipertreeGraph {
+        width: 500px;
+        height: 500px;
+        display: block;
+    }
+
+    #wordCloudGraph {
+        /*width: 500px;
+        height: 500px;
+        display: block;*/
+    }
+
+    #hipertreeGraph-canvaswidget {
+        margin: 25px 0 0 25px;
+    }
+</style>
+<script>
+    //$.ready(init());
+    var frequency_list = [{ "text": "#BOLSOMITO2018", "size": 40 }, { "text": "#VOLTALULA", "size": 20 }];
+
+    var color = d3.scale.linear()
+            .domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100])
+            .range(["#854", "#254", "#235", "#147", "#999", "#888", "#777", "#666", "#555", "#147", "#258", "#528"]);
+
+    d3.layout.cloud().size([800, 300])
+            .words(frequency_list)
+            .rotate(function () { return ~~(Math.random() * 2) * 90; })
+            .font("Impact")
+            .fontSize(function (d) { return d.size; })
+            .on("end", draw)
+            .start();
+
+    //d3.layout.cloud().size([960, 500])
+    ////.canvas(function () { return new Canvas(1, 1); })
+    //.words(words)
+    //.padding(5)
+    //.rotate(function () { return ~~(Math.random() * 2) * 90; })
+    //.font("Impact")
+    //.fontSize(function (d) { return d.size; })
+    //.on("end", end)
+    //.start();
+
+
+    function draw(words) {
+        d3.select("body").append("svg")
+                .attr("width", 850)
+                .attr("height", 350)
+                .attr("class", "wordcloud")
+                .append("g")
+                // without the transform, words words would get cutoff to the left and top, they would
+                // appear outside of the SVG area
+                .attr("transform", "translate(320,200)")
+                .selectAll("text")
+                .data(words)
+                .enter().append("text")
+                .style("font-size", function (d) { return d.size + "px"; })
+                .style("fill", function (d, i) { return color(i); })
+                .attr("transform", function (d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .text(function (d) { return d.text; });
+    }
+
+</script>

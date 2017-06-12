@@ -1,0 +1,5 @@
+C:\Users\Daniel\Desktop\projetoTCC-master\Model\bin\Debug\Model.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Model\bin\Debug\Model.pdb
+C:\Users\Daniel\Desktop\projetoTCC-master\Model\obj\Debug\Model.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Model\obj\Debug\Model.pdb
+C:\Users\Daniel\Desktop\projetoTCC-master\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

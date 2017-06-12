@@ -1,0 +1,17 @@
+﻿
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Model" namespace="Model.EntradaDados.Models">
+
+  <class name="Tweet" table="twitter.tweet">
+    <id name="Id" column="id" type="Int64">
+      <generator class="sequence">
+        <param name="sequence">twitter.tweets_tweet_id_seq</param>
+      </generator>
+    </id>
+    
+    <property name="Conteudo" column="conteudo" type="String"></property>
+    <property name="Politico" column="politico" type="String"></property>
+    <property name="DataHora" column="datahora" type="DateTime"></property>
+
+  </class>
+
+</hibernate-mapping>

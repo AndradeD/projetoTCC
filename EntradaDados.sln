@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntradaDadosWeb", "EntradaDados\EntradaDadosWeb.csproj", "{34B53623-8898-4B21-8408-877A27322F2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterServiceApplication", "TwitterServiceApplication\TwitterServiceApplication.csproj", "{F5225745-A1AC-4090-ABD1-9655BE48BC3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{07B4B13E-6E11-4034-B1F9-9F397768E1C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{939E0D47-CF37-42D5-ADED-1447CA47BE61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34B53623-8898-4B21-8408-877A27322F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B53623-8898-4B21-8408-877A27322F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B53623-8898-4B21-8408-877A27322F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B53623-8898-4B21-8408-877A27322F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5225745-A1AC-4090-ABD1-9655BE48BC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5225745-A1AC-4090-ABD1-9655BE48BC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5225745-A1AC-4090-ABD1-9655BE48BC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5225745-A1AC-4090-ABD1-9655BE48BC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B4B13E-6E11-4034-B1F9-9F397768E1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B4B13E-6E11-4034-B1F9-9F397768E1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B4B13E-6E11-4034-B1F9-9F397768E1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B4B13E-6E11-4034-B1F9-9F397768E1C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939E0D47-CF37-42D5-ADED-1447CA47BE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939E0D47-CF37-42D5-ADED-1447CA47BE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939E0D47-CF37-42D5-ADED-1447CA47BE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939E0D47-CF37-42D5-ADED-1447CA47BE61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

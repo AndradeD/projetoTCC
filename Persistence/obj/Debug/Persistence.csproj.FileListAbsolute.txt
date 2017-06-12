@@ -1,0 +1,15 @@
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Persistence.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Persistence.pdb
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Iesi.Collections.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Model.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\NHibernate.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Npgsql.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Model.pdb
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Iesi.Collections.xml
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\NHibernate.xml
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\Npgsql.xml
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\obj\Debug\Persistence.dll
+C:\Users\Daniel\Desktop\projetoTCC-master\Persistence\obj\Debug\Persistence.pdb
