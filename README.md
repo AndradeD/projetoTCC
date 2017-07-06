@@ -1,5 +1,8 @@
 # projetoTCC
 
+https://www.codeproject.com/Articles/823854/How-to-connect-SQL-Database-to-your-Csharp-program
+________________________  _____________________________________________________________________
+
 
 https://medium.com/the-wtf-economy/do-more-what-amazon-teaches-us-about-ai-and-the-jobless-future-8051b19a66af?vero_id=6102310402&vero_conv=Z3_qSuIADu6XuicUr7MEYAu34abF3TL3AyrE4sfIIjjiKIvX2LtzV9RxU-WzySk6-6y9GnRZH6kHGlneXr_O1zQetXO7R7f1
 
