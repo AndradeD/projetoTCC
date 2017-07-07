@@ -3,3 +3,8 @@ C:\Users\Daniel\Desktop\projetoTCC-master\Model\bin\Debug\Model.pdb
 C:\Users\Daniel\Desktop\projetoTCC-master\Model\obj\Debug\Model.dll
 C:\Users\Daniel\Desktop\projetoTCC-master\Model\obj\Debug\Model.pdb
 C:\Users\Daniel\Desktop\projetoTCC-master\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\daniel.quintana\Desktop\tcc\projetoTCC\Model\bin\Debug\Model.dll
+C:\Users\daniel.quintana\Desktop\tcc\projetoTCC\Model\bin\Debug\Model.pdb
+C:\Users\daniel.quintana\Desktop\tcc\projetoTCC\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\daniel.quintana\Desktop\tcc\projetoTCC\Model\obj\Debug\Model.dll
+C:\Users\daniel.quintana\Desktop\tcc\projetoTCC\Model\obj\Debug\Model.pdb

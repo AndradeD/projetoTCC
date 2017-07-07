@@ -1,6 +1,7 @@
 ﻿using EntradaDados.Models;
 using Model;
 using Persistence;
+using Persistence.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,7 +22,7 @@ namespace TwitterServiceApplication.Services
         public string AccessToken = "96777401-6xjcu43NpnHGNdhd6tIJlxkpNqbWVz2ZfJUzkF9C5";
         public string AccessTokenSecret = "8TdU0WfYhxFz3sS1GvX1mmuyjFtMFnCEH4p96fqk1OV6Y";
 
-        Repositorio repository = new Repositorio();
+        Repository repository = new Repository();
 
         public List<string> GetTwitts(string screenName = "")
         {
@@ -113,7 +114,7 @@ namespace TwitterServiceApplication.Services
                     tweet.Conteudo = t;
                     tweet.Politico = tweetsPoliticos[politico].ToString();
                     tweet.DataHora = DateTime.Now;
-                    repository.InsertOrUpdate(tweet);
+                    repository.ApplyToDb(tweet);
                 }
             }
 
