@@ -95,8 +95,8 @@ namespace TwitterServiceApplication.Services
             tweetsPoliticos.Add(ePolitico.eFlavioBolsonaro, "flaviobolsonaro");
             tweetsPoliticos.Add(ePolitico.eJorgePicciani, "jorgepicciani");
             tweetsPoliticos.Add(ePolitico.eMarceloFreixo, "marcelofreixo");
-            tweetsPoliticos.Add(ePolitico.eJoseSerra, "joseserra");
-            tweetsPoliticos.Add(ePolitico.eEduardoPaes, "eduardopaes");
+            tweetsPoliticos.Add(ePolitico.eJoseSerra, "joseserra_");
+            tweetsPoliticos.Add(ePolitico.eEduardoPaes, "eduardopaes_");
             tweetsPoliticos.Add(ePolitico.eLula, "LulapeloBrasil");
             tweetsPoliticos.Add(ePolitico.eDoria, "jdoriajr");
             tweetsPoliticos.Add(ePolitico.ePezao, "lfpezao");
@@ -105,16 +105,26 @@ namespace TwitterServiceApplication.Services
             foreach (var key in tweetsPoliticos)
             {
                 ePolitico politico = key.Key;
+                
                 List<string> twitts = GetTwitts(tweetsPoliticos[politico]);
 
                 foreach (var t in twitts)
-                {
+                {                    
                     Console.WriteLine(t + "\n");
                     Tweet tweet = new Tweet();
-                    tweet.Conteudo = t;
+                    tweet.Conteudo = t.Replace("'","");
                     tweet.Politico = tweetsPoliticos[politico].ToString();
                     tweet.DataHora = DateTime.Now;
-                    repository.ApplyToDb(tweet);
+
+                    List<string> listaTweets = repository.SelectByPolitico(tweet);                    
+                    if (!listaTweets.Contains(tweet.Politico))
+                    {
+                        repository.ApplyToDb(tweet);
+                    }
+                    else
+                    {
+                        break;
+                    }                   
                 }
             }
 
