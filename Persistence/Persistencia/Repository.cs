@@ -26,7 +26,8 @@ namespace Persistence.Persistencia
         public List<string> SelectByPolitico(Tweet tweet)
         {
             List<string> listaTweets = new List<string>();
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM twitter.tweet where politico = '" + tweet.Politico + "'", Connection);
+           
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM twitter.tweet where politico = '" + tweet.Politico + "' and datahora = '"+tweet.DataHora+"' and conteudo = '"+tweet.Conteudo+"'", Connection);
             Connection.Open();
             NpgsqlDataReader dr = cmd.ExecuteReader();
 
@@ -56,7 +57,7 @@ namespace Persistence.Persistencia
             }
 
 
-            NpgsqlParameter param = new NpgsqlParameter(":date", NpgsqlTypes.NpgsqlDbType.Date);
+            NpgsqlParameter param = new NpgsqlParameter(":date", NpgsqlTypes.NpgsqlDbType.Timestamp);
             param.Value = tweet.DataHora;
             command.Parameters.Add(param);
 

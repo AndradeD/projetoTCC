@@ -1,4 +1,5 @@
 ﻿using EntradaDados.Models;
+using LinqToTwitter;
 using Model;
 using Persistence;
 using Persistence.Persistencia;
@@ -24,63 +25,60 @@ namespace TwitterServiceApplication.Services
 
         Repository repository = new Repository();
 
-        public List<string> GetTwitts(string screenName = "")
+        public List<Tweet> GetTwitts(string screenName = "")
         {
-            List<string> listaTweets = new List<string>();
-            var service = new TwitterService(OAuthConsumerKey, OAuthConsumerSecret);
-            service.AuthenticateWith(AccessToken, AccessTokenSecret);
-            IEnumerable<TwitterStatus> tweetStatus = service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = screenName, Count = 10 });
+            //List<Tweet> listaTweets = new List<Tweet>();
+            //var service = new TwitterService(OAuthConsumerKey, OAuthConsumerSecret);
+            //service.AuthenticateWith(AccessToken, AccessTokenSecret);
+            //IEnumerable<TwitterStatus> tweetStatus = service.ListTweetsOnUserTimeline(
+            //    new ListTweetsOnUserTimelineOptions
+            //    {
+            //        ScreenName = screenName,
+            //        Count = 10
+            //    });
 
-            foreach (TwitterStatus t in tweetStatus) {
-                listaTweets.Add(t.Text);
-            }
-
-            //HttpWebRequest http = WebRequest.Create(urlApiSearch) as HttpWebRequest;
-
-            ////var requestUserTimeline = new HttpRequestMessage(HttpMethod.Get, string.Format("https://api.twitter.com/1.1/statuses/user_timeline.json?count={0}&screen_name={1}&trim_user=1&exclude_replies=1", count, userName));
-            //http.Headers.Add("Authorization", "Bearer " + AccessToken);
-
-            //HttpWebResponse response = (HttpWebResponse)http.GetResponse();
-            ////HttpResponseMessage responseUserTimeLine = httpClient.get(requestUserTimeline);
-            //var serializer = new JavaScriptSerializer();
-            //dynamic json = serializer.Deserialize<object>(response.ToString());
-            //var enumerableTwitts = (json as IEnumerable<dynamic>);
-
-            //if (enumerableTwitts == null)
+            //foreach (TwitterStatus t in tweetStatus)
             //{
-            //    return null;
+            //    Tweet tweet = new Tweet();
+            //    tweet.Conteudo = t.Text.Replace("'", "");
+            //    tweet.Politico = t.Author.ScreenName;
+            //    tweet.DataHora = t.CreatedDate;
+            //    listaTweets.Add(tweet);
             //}
-            return listaTweets;
+
+            //return listaTweets;
+
+            var auth = new SingleUserAuthorizer
+            {
+                CredentialStore = new SingleUserInMemoryCredentialStore
+                {
+                    ConsumerKey = OAuthConsumerKey,
+                    ConsumerSecret = OAuthConsumerSecret,
+                    AccessToken = AccessToken,
+                    AccessTokenSecret = AccessTokenSecret
+                }
+            };
+
+            var context = new TwitterContext(auth);
+            var tweets =
+                from tweetConfig in context.Status
+                where
+                    tweetConfig.Type == StatusType.User &&
+                    tweetConfig.ScreenName == screenName
+                select tweetConfig;
+
+
+            return tweets
+                .Take(20)
+                .Select(t =>
+                    new Tweet
+                    {
+                        Politico = t.ScreenName,
+                        Conteudo = t.Text.Replace("'", ""),
+                        DataHora = t.CreatedAt
+                    })
+                .ToList();
         }
-
-        //public async Task<string>/*string */GetAccessToken()
-        //{
-        //   // var httpClient = new HttpClient();
-        //    var request = new HttpRequestMessage(HttpMethod.Post, "https://api.twitter.com/oauth2/token ");
-        //    var customerInfo = Convert.ToBase64String(new UTF8Encoding().GetBytes(OAuthConsumerKey + ":" + OAuthConsumerSecret));
-        //    request.Headers.Add("Authorization", "Basic " + customerInfo);
-        //    request.Content = new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded");
-
-        //    // WebRequest request = WebRequest.Create("https://api.twitter.com/oauth2/token");
-        //    //request.Headers.Add("Authorization", "Basic " + customerInfo);
-        //    // request.Content = new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded");
-
-        //    //WebResponse response = request.GetResponse();            
-
-        //    //Stream dataStream = response.GetResponseStream();
-
-        //    //StreamReader reader = new StreamReader(dataStream);
-
-        //    //string rt = reader.ReadToEnd();
-
-        //    string response = request.Content.ToString();
-
-        //    //      string json = response.ToString();
-        //    string json = response; 
-        //    var serializer = new JavaScriptSerializer();
-        //    dynamic item = serializer.Deserialize<object>(json);
-        //    return item["access_token"];
-        //}
 
 
         public void SaveTweets()
@@ -100,26 +98,30 @@ namespace TwitterServiceApplication.Services
             tweetsPoliticos.Add(ePolitico.eLula, "LulapeloBrasil");
             tweetsPoliticos.Add(ePolitico.eDoria, "jdoriajr");
             tweetsPoliticos.Add(ePolitico.ePezao, "lfpezao");
+            tweetsPoliticos.Add(ePolitico.eTiririca, "tiriricanaweb");
+            tweetsPoliticos.Add(ePolitico.eRomario, "RomarioOnze");
+            tweetsPoliticos.Add(ePolitico.eDilma, "dilmabr");
+            tweetsPoliticos.Add(ePolitico.eMarinaSilva, "silva_marina");
+            tweetsPoliticos.Add(ePolitico.eTemer, "MichelTemer");
+            tweetsPoliticos.Add(ePolitico.eGarotinho, "blogdogarotinho");
+            tweetsPoliticos.Add(ePolitico.eIndioDaCosta, "indio");
+            tweetsPoliticos.Add(ePolitico.eCrivella, "MCrivella");
+            tweetsPoliticos.Add(ePolitico.eJeanWyllys, "jeanwyllys_real");
+
 
 
             foreach (var key in tweetsPoliticos)
             {
                 ePolitico politico = key.Key;
                 
-                List<string> twitts = GetTwitts(tweetsPoliticos[politico]);
+                List<Tweet> twitts = GetTwitts(tweetsPoliticos[politico]);
 
-                foreach (var t in twitts)
-                {                    
-                    Console.WriteLine(t + "\n");
-                    Tweet tweet = new Tweet();
-                    tweet.Conteudo = t.Replace("'","");
-                    tweet.Politico = tweetsPoliticos[politico].ToString();
-                    tweet.DataHora = DateTime.Now;
-
-                    List<string> listaTweets = repository.SelectByPolitico(tweet);                    
-                    if (!listaTweets.Contains(tweet.Politico))
+                foreach (Tweet t in twitts)
+                {                                        
+                    List<string> listaTweets = repository.SelectByPolitico(t);                    
+                    if (!listaTweets.Contains(t.Politico))
                     {
-                        repository.ApplyToDb(tweet);
+                        repository.ApplyToDb(t);
                     }
                     else
                     {

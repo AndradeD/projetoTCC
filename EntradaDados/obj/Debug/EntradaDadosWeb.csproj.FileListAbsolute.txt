@@ -292,3 +292,13 @@ C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\Microsoft.Owin.Security.
 C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\obj\Debug\EntradaDadosWeb.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\obj\Debug\EntradaDados.dll
 C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\obj\Debug\EntradaDados.pdb
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\LinqToTwitter.AspNet.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\LinqToTwitter.net.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Core.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Interfaces.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Linq.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.PlatformServices.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Core.xml
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Interfaces.xml
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Linq.xml
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.PlatformServices.xml
