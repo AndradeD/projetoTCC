@@ -43,3 +43,5 @@ C:\Users\Daniel\Desktop\TCC\projetoTCC\Persistence\bin\Debug\System.Threading.Ta
 C:\Users\Daniel\Desktop\TCC\projetoTCC\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\TCC\projetoTCC\Persistence\obj\Debug\Persistence.dll
 C:\Users\Daniel\Desktop\TCC\projetoTCC\Persistence\obj\Debug\Persistence.pdb
+C:\Users\Daniel\Desktop\TCC\projetoTCC\Persistence\bin\Debug\Persistence.dll.config
+C:\Users\Daniel\Desktop\TCC\projetoTCC\Persistence\bin\Debug\MySql.Data.dll

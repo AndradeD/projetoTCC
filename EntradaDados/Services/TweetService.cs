@@ -119,13 +119,13 @@ namespace TwitterServiceApplication.Services
                 foreach (Tweet t in twitts)
                 {                                        
                     List<string> listaTweets = repository.SelectByPolitico(t);                    
-                    if (!listaTweets.Contains(t.Politico))
+                    if (listaTweets.Contains(t.Politico) && listaTweets.Count == twitts.Count)
                     {
-                        repository.ApplyToDb(t);
+                        break;                        
                     }
                     else
                     {
-                        break;
+                        repository.ApplyToDb(t);
                     }                   
                 }
             }

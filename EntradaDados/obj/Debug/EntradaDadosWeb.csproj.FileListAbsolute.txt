@@ -302,3 +302,5 @@ C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Core.xml
 C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Interfaces.xml
 C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.Linq.xml
 C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\System.Reactive.PlatformServices.xml
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\MySql.Data.dll
+C:\Users\Daniel\Desktop\TCC\projetoTCC\EntradaDados\bin\MySql.Data.xml
